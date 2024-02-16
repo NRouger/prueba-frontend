@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infonet</title>
+    <link rel="stylesheet" href="../style/main.css"> <!-- Enlaza tu archivo de estilos principal -->
+    <!-- Enlaza Bootstrap desde la CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      .seccion {
+          background-color: #16a873;
+          padding: 30px;
+          color: white;
+      }
+  </style>
+  </head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!-- <a class="navbar-brand" href="#"><strong>Infonet</strong></a> -->
+        <div class="navbar-brand">
+          <svg xmlns="http://www.w3.org/2000/svg" width="131.364" height="40" viewBox="0 0 131.364 40" class="logo">
+            <g transform="translate(24082 11573)">
+              <path class="rectangle" d="M2,0H72.737a2,2,0,0,1,2,2V38a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(-24082 -11573)" fill="#16a974"></path>
+              <path class="info" d="M4.679-17.567a3.162,3.162,0,0,0,2.236-.939,3.162,3.162,0,0,0,.913-2.246,3.131,3.131,0,0,0-.917-2.231A3.131,3.131,0,0,0,4.679-23.9a3.131,3.131,0,0,0-2.231.916,3.131,3.131,0,0,0-.918,2.231,3.162,3.162,0,0,0,.913,2.247,3.162,3.162,0,0,0,2.236.939ZM7.435,1.258V-16.028H1.924V1.258Zm21.223,0v-12.24c0-3.185-1.789-5.476-5.726-5.476a7.813,7.813,0,0,0-5.977,2.541v-2.112H11.444V1.258h5.512V-9.908A4.265,4.265,0,0,1,20.32-11.59c1.718,0,2.827.752,2.827,2.863V1.258Zm10.7,0V-11.233h3.507v-4.8H39.359v-.716a1.81,1.81,0,0,1,.47-1.467,1.81,1.81,0,0,1,1.43-.573,2.836,2.836,0,0,1,1.432.358l1-3.758a7.894,7.894,0,0,0-3.651-.787,5.852,5.852,0,0,0-4.446,1.668,5.852,5.852,0,0,0-1.746,4.416v.859H30.985v4.8h2.863V1.258Zm14.065.429c5.941,0,9.448-4.223,9.448-9.091s-3.507-9.055-9.448-9.055c-5.869,0-9.413,4.187-9.413,9.055s3.545,9.091,9.415,9.091Zm0-4.867c-2.4,0-3.722-1.9-3.722-4.223,0-2.291,1.324-4.187,3.722-4.187,2.434,0,3.794,1.9,3.794,4.187,0,2.326-1.359,4.223-3.792,4.223Z" transform="translate(-24076.656 -11541.626)" fill="#fff"></path>
+              <path class="net" d="M19.119,1.1V-11.14c0-3.185-1.789-5.476-5.726-5.476a7.813,7.813,0,0,0-5.977,2.541v-2.112H1.9V1.1H7.416V-10.066a4.265,4.265,0,0,1,3.364-1.682c1.718,0,2.827.752,2.827,2.863V1.1Zm12.311.43A11.276,11.276,0,0,0,38.66-.761L36.333-4.2a7.32,7.32,0,0,1-4.3,1.467c-2.5,0-4.008-1.467-4.331-3.078H40.02V-6.988c0-5.869-3.722-9.627-8.84-9.627a8.921,8.921,0,0,0-6.538,2.559,8.921,8.921,0,0,0-2.662,6.5C21.982-1.942,26.1,1.53,31.43,1.53ZM34.759-9.386H27.637a3.415,3.415,0,0,1,3.543-2.971,3.322,3.322,0,0,1,3.579,2.971ZM49.289,1.53A6.016,6.016,0,0,0,53.369.385L52.3-3.767a2.142,2.142,0,0,1-1.4.429,1.567,1.567,0,0,1-1.161-.533,1.567,1.567,0,0,1-.378-1.221v-6.3h3.507v-4.8H49.361V-20.91H43.885v4.724H41.022v4.8h2.863v7.838C43.885-.224,45.782,1.53,49.289,1.53Z" transform="translate(-24004.006 -11541.469)" fill="#283136"></path>
+            </g>
+          </svg>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">ENTERPRISES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">DIRIGEANTS</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1">API</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2">SERVICES</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3">GUIDE</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4">LEXIQUE</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5">VIDEOS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ACTUALITÉ</a>
+              </li>
+              <button type="button" class="btn btn-sm mx-2" style="background-color: #16a873; color: white;">MON COMPTE</button>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Inicio -->
+<div class="container-fluid">
+  <div class="seccion">
+    <p>Acueil > Métiers > Audit e controle comptables et financiers > Expert comptable</p>
+    <div class="card mb-3" style="max-height: 570px;">
+      <div class="row g-0">
+      <div class="col-md-4 d-flex justify-content-center">
+        <img src="/image 3.jpg" class="card-img-top img-fluid rounded-start p-3" style="height: 18rem; width: 18rem;" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title">Expert-comptable</h2>
+          <p class="card-text">L'expert-comptable est le professionnel de la gestion financière d'une entreprise. Son rôle est de conseiller sa direction sur le plan fiscal, social et économique. Il tient la comptabilité, réalise un bilan chaque année et déclare les résultats fiscaux. Il est également en charge de l'audit interne et contrôle la gestion de l'entreprise pour s'assurer de sa santé financière. Il peut travailler en indépendant ou dans un cabinet comptable, mais aussi en interne dans une entreprise en tant que directeur administratif et financier.
+            Fin stratège, il est amené à proposer des solutions d'optimisation financière. Ce métier requiert rigueur, discrétion et une excellente connaissance du droit et de la réglementation en matière économique et financière. Les compétences en communication sont aussi nécessaires pour expliquer et conseiller sur des sujets complexes. Il est également tenu au secret professionnel.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-3">
+    <!-- <div class="row row-cols-4 p-3"> -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 pt-3">
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+              </svg>
+              <p class="text-center m-0"><strong>Secteur d’activité</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">Audit et contrôle comptables et financiers</p>
+              <p class="text-center" style="color: grey;"><sub>ROME - M1202</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-backpack" viewBox="0 0 16 16">
+                <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+                <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c2.33.824 4 3.047 4 5.659v5.5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5V8a6 6 0 0 1 4-5.659M7 2v.083a6 6 0 0 1 2 0V2a1 1 0 0 0-2 0m1 1a5 5 0 0 0-5 5v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a5 5 0 0 0-5-5"/>
+              </svg>
+              <p class="text-center m-0"><strong>Niveau d'étude</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">BAC +8</p>
+              <p class="text-center" style="color: grey;"><sub>DEC (Diplôme d'Expertise Comptable)</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;"  fill="currentColor" class="bi bi-file-bar-graph-fill" viewBox="0 0 16 16">
+                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-2 11.5v-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5m-2.5.5a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5zm-3 0a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5z"/>
+              </svg>
+              <p class="text-center m-0"><strong>54%</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">CDI</p>
+              <p class="text-center" style="color: grey;"><sub>Source póle emploi</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+              </svg>
+              <p class="text-center m-0"><strong>74%</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">Hommes</p>
+              <p class="text-center" style="color: grey;"><sub>Source póle emploi</sub></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2 row ------------------------ -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 pt-3">
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+              </svg>
+              <p class="text-center m-0"><strong>Salaire débutant</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">2 708 €</p>
+              <p class="text-center" style="color: grey;"><sub>Bruts mensuel</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+              </svg>
+              <p class="text-center m-0"><strong>Demandeurs d'emploi</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">3 950</p>
+              <p class="text-center" style="color: grey;"><sub>Póle Emploi</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-file-earmark-ruled" viewBox="0 0 16 16">
+                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5zM3 12v-2h2v2zm0 1h2v2H4a1 1 0 0 1-1-1zm3 2v-2h7v1a1 1 0 0 1-1 1zm7-3H6v-2h7z"/>
+              </svg>
+              <p class="text-center m-0"><strong>Offres d'emplois</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">198 300</p>
+              <p class="text-center" style="color: grey;"><sub>Póle Emploi</sub></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mx-auto" style="width: 20.6rem;">
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color: #16a873; padding-bottom: 5px;" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2 2 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a10 10 0 0 0-.443.05 9.4 9.4 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a9 9 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.2 2.2 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.9.9 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+              </svg>
+              <p class="text-center m-0"><strong>Volume d'embauche</strong></p>
+              <p class="text-center m-0" style="color: #16a873;">1 200</p>
+              <p class="text-center" style="color: grey;"><sub>Emplois par an</sub></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- -----------------------Charts horizontales----------------------------- -->
+<div class="m-4">
+  <div class="row pt-3">
+    <div class="col-md-6">
+      <div class="card" style="width: 45rem;">
+        <div class="card-header p-3">
+          <h4><strong>Répartition par âge</strong></h4>
+        </div>
+        <div class="p-3">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" style="width: 45rem;">
+        <div class="card-header p-3">
+          <h4><strong>Répartition par taille d'entreprise</strong></h4>
+        </div>
+        <div class="p-3">
+          <canvas id="barChart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tarjetas datos salaire + chart -->
+  <div class="mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header p-3">
+            <h4><strong>Salaire d’expert-comptable</strong></h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- columna de texto y grid -->
+              <div class="col-md-6 p-3">
+                <!-- texto inicial -->
+                <p class=""><sub>En France, le salaire mensuel moyen d'un expert comptable est de
+                  4 477 € brut en 2022, c'est-à-dire 53 719 € brut annuel. Tandis que le
+                  salaire brut médian s'élève à 4 167 € mensuel, soit une rémunération annuelle de 50 000 € brut par an.</sub></p>
+                <!-- grid de 4 tarjetas en 2x2 -->
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <div class="card my-2 bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut à l'embauche</p>
+                        <p class="text-center m-0" style="color: #16a873;">2 708 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>32 k€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card my-2 bg-light">
+                      <div class="card-body m-0">
+                        <p class="text-center m-0">Salaire brut médian</p>
+                        <p class="text-center m-0" style="color: #16a873;">4 167 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>50 k€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut moyen</p>
+                        <p class="text-center m-0" style="color: #16a873;">4 477 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>54 K€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut moyen en France</p>
+                        <p class="text-center m-0" style="color: black;">3 300 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>40 K€ (annuel)</sub></p>                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- texto final -->
+                <p><sub>Le salaire d'un expert-comptable peut varier en fonction de nombreux facteurs tels que l'expérience, la localisation, l'entreprise, etc. En France, le salaire moyen est généralement compris entre 40 000 et 100 000 euros brut par an. Un expert-comptable débutant peut gagner environ 40 000 euros brut par an, tandis qu'un professionnel expérimenté peut gagner plus de 100 000 euros brut par an.</sub></p>
+              </div>
+              <!-- ccolumna chart -->
+              <div class="col-md-6">
+                <div class="card-body align-items-center text-center">
+                  <h6><strong>Évolution de salaire d'expert-comptable</strong></h6>
+                  <!-- chart horizontal salaire -->
+                  <canvas id="barChart3" style="width: fit-content;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card w-100 my-5">
+    <div class="card-header p-3">
+      <h4><strong>Études / Formation</strong></h4>
+    </div>
+    <div class="card-body justify-content-center py-3 mb-3">
+      <p class="card-text m-0">
+        <sub>Pour devenir Expert-comptable, le parcours de formation est assez long et complexe. Voici les étapes générales :</sub></p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub><strong>Diplôme de Comptabilité et de Gestion (DCG) :</strong>
+          C'est une formation de niveau licence qui offre une bonne base dans les domaines de la comptabilité, du droit et de la finance.
+        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Diplôme Supérieur de Comptabilité et de Gestion (DSCG) :</strong>
+          C'est une formation de niveau Master. En général, deux années d'études supplémentaires sont nécessaires pour obtenir ce diplôme après le DCG
+        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Stage professionnel d'expertise comptable :</strong>
+          Après avoir obtenu le DSCG, il est nécessaire de travailler en tant que stagiaire pendant trois ans minimum dans un cabinet d'expertise comptable.        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Diplôme d'Expertise Comptable (DEC) :</strong>
+          Ce diplôme est l'ultime étape pour devenir expert-comptable. Il nécessite la réussite d'un examen final et la rédaction d'une thèse professionnelle.        </sub>
+      </p>
+      <p class="card-text m-0">
+        <sub>
+          Il existe toutefois des passerelles et des équivalences pour les candidats qui ont déjà un master en comptabilité, finance ou gestion. Certains programmes de master en école de commerce incluent également une préparation aux examens du DCG et du DSCG. Par ailleurs,
+          il est important de noter que le parcours peut être légèrement différent en fonction des pays.
+        </sub>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/src/aqcuisitions.js"></script>
+
+</body>
+</html>
