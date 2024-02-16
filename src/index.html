@@ -65,8 +65,8 @@
         </div>
     </div>
 </nav>
+<!-- Inicio -->
 <div class="container-fluid">
-
   <div class="seccion">
     <p>Acueil > Métiers > Audit e controle comptables et financiers > Expert comptable</p>
     <div class="card mb-3" style="max-height: 570px;">
@@ -194,9 +194,8 @@
       </div>
     </div>
 
-<!-- ---------------------------------------------------- -->
+<!-- -----------------------Charts horizontales----------------------------- -->
 <div class="m-4">
-
   <div class="row pt-3">
     <div class="col-md-6">
       <div class="card" style="width: 45rem;">
@@ -217,6 +216,127 @@
           <canvas id="barChart2"></canvas>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- tarjetas datos salaire + chart -->
+  <div class="mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header p-3">
+            <h4><strong>Salaire d’expert-comptable</strong></h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <!-- columna de texto y grid -->
+              <div class="col-md-6 p-3">
+                <!-- texto inicial -->
+                <p class=""><sub>En France, le salaire mensuel moyen d'un expert comptable est de
+                  4 477 € brut en 2022, c'est-à-dire 53 719 € brut annuel. Tandis que le
+                  salaire brut médian s'élève à 4 167 € mensuel, soit une rémunération annuelle de 50 000 € brut par an.</sub></p>
+                <!-- grid de 4 tarjetas en 2x2 -->
+                <div class="row row-cols-2">
+                  <div class="col">
+                    <div class="card my-2 bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut à l'embauche</p>
+                        <p class="text-center m-0" style="color: #16a873;">2 708 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>32 k€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card my-2 bg-light">
+                      <div class="card-body m-0">
+                        <p class="text-center m-0">Salaire brut médian</p>
+                        <p class="text-center m-0" style="color: #16a873;">4 167 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>50 k€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut moyen</p>
+                        <p class="text-center m-0" style="color: #16a873;">4 477 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>54 K€ (annuel)</sub></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card bg-light">
+                      <div class="card-body">
+                        <p class="text-center m-0">Salaire brut moyen en France</p>
+                        <p class="text-center m-0" style="color: black;">3 300 €</p>
+                        <p class="text-center m-0" style="color: grey;"><sub>40 K€ (annuel)</sub></p>                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- texto final -->
+                <p><sub>Le salaire d'un expert-comptable peut varier en fonction de nombreux facteurs tels que l'expérience, la localisation, l'entreprise, etc. En France, le salaire moyen est généralement compris entre 40 000 et 100 000 euros brut par an. Un expert-comptable débutant peut gagner environ 40 000 euros brut par an, tandis qu'un professionnel expérimenté peut gagner plus de 100 000 euros brut par an.</sub></p>
+              </div>
+              <!-- ccolumna chart -->
+              <div class="col-md-6">
+                <div class="card-body align-items-center text-center">
+                  <h6><strong>Évolution de salaire d'expert-comptable</strong></h6>
+                  <!-- chart horizontal salaire -->
+                  <canvas id="barChart3" style="width: fit-content;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card w-100 my-5">
+    <div class="card-header p-3">
+      <h4><strong>Études / Formation</strong></h4>
+    </div>
+    <div class="card-body justify-content-center py-3 mb-3">
+      <p class="card-text m-0">
+        <sub>Pour devenir Expert-comptable, le parcours de formation est assez long et complexe. Voici les étapes générales :</sub></p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub><strong>Diplôme de Comptabilité et de Gestion (DCG) :</strong>
+          C'est une formation de niveau licence qui offre une bonne base dans les domaines de la comptabilité, du droit et de la finance.
+        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Diplôme Supérieur de Comptabilité et de Gestion (DSCG) :</strong>
+          C'est une formation de niveau Master. En général, deux années d'études supplémentaires sont nécessaires pour obtenir ce diplôme après le DCG
+        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Stage professionnel d'expertise comptable :</strong>
+          Après avoir obtenu le DSCG, il est nécessaire de travailler en tant que stagiaire pendant trois ans minimum dans un cabinet d'expertise comptable.        </sub>
+      </p>
+      <p class="card-text m-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="color:#16a873; margin-top: 6px;" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+        </svg>
+        <sub>
+          <strong>Diplôme d'Expertise Comptable (DEC) :</strong>
+          Ce diplôme est l'ultime étape pour devenir expert-comptable. Il nécessite la réussite d'un examen final et la rédaction d'une thèse professionnelle.        </sub>
+      </p>
+      <p class="card-text m-0">
+        <sub>
+          Il existe toutefois des passerelles et des équivalences pour les candidats qui ont déjà un master en comptabilité, finance ou gestion. Certains programmes de master en école de commerce incluent également une préparation aux examens du DCG et du DSCG. Par ailleurs,
+          il est important de noter que le parcours peut être légèrement différent en fonction des pays.
+        </sub>
+      </p>
     </div>
   </div>
 </div>

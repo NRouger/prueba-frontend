@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             backgroundColor: [
                 '#16a873', // Verde color
             ],
+            barThickness: 40,
             // borderColor: [
             //     '#16a873',
             // ],
@@ -33,8 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
             indexAxis: 'y',
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    grid: {
+                      display: false,
+                    }
                 }
+
             }
         }
     });
@@ -44,13 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
      const data2 = {
        labels: labels2,
        datasets: [{
-           axis: 'y',
-           label: 'salariés',
-           data: [77, 7.9, 5.1, 1.1],
-           fill: false,
-           backgroundColor: [
-               '#16a873', // Verde color
-           ],
+          axis: 'y',
+          label: 'salariés',
+          data: [77, 7.9, 5.1, 1.1],
+          fill: false,
+          backgroundColor: [
+              '#16a873',
+          ],
+          barThickness: 40,
            // borderColor: [
            //     '#16a873',
            // ],
@@ -67,9 +73,63 @@ document.addEventListener('DOMContentLoaded', function () {
             indexAxis: 'y',
             scales: {
                 y: {
-                    beginAtZero: true
+                  beginAtZero: true,
+                  grid: {
+                    display: false, // Oculta las líneas de la escala Y
+                  }
                 }
+
             }
         }
+    });
+
+    // Gráfico de barras verticales
+    const labels3 = ['2018', '2019', '2020', '2022', '2021', '2023']
+    const data3 = {
+      labels: labels3,
+      datasets: [{
+          axis: 'y',
+          label: 'salariés',
+          data: [38, 40, 42, 45, 43, 49],
+          fill: true,
+          backgroundColor: ['#16a873'],
+          barThickness: 20,
+          // borderColor: [
+          //     '#16a873',
+          // ],
+          // borderWidth: 1
+      }]
+    };
+
+    const ctx3 = document.getElementById('barChart3').getContext('2d');
+    const barChart3 = new Chart(ctx3, {
+      type: 'bar',
+      data: data3,
+      options: {
+        indexAxis: 'x',
+        scales: {
+          y: {
+            min: 0,
+            max: 50000,
+            stepSize: 10000,
+            ticks: {
+              callback: function(value, index, values) {
+                return (value / 1000) + 'k';
+              }
+            },
+            grid: {
+              display: false,
+            }
+          },
+          y: {
+            beginAtZero: true
+          },
+          x: {
+            grid: {
+              display: false, // Oculta las líneas de la escala Y
+            }
+          }
+        }
+      }
     });
 });
